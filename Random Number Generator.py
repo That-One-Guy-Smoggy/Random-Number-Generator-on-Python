@@ -1,17 +1,6 @@
 import random
 import time 
 
-## We take the inputs from the use, in this case first and second number.
-firstNumber = float(input("""
-*********************************************
-********** Random Number Generator **********
-***************** By Smoggy *****************
-*********************************************
- 
- Please input an integer: """))
-
-secondNumber = float(input("Please input a higher integer: "))
-
 ## The followent functions round the number given incase it's a float 
 def roundNumber():
     if firstNumber == float:
@@ -25,6 +14,17 @@ def roundNumber2():
     else:
         return secondNumber
 
+## We take the inputs from the use, in this case first and second number.
+firstNumber = float(input("""
+*********************************************
+********** Random Number Generator **********
+***************** By Smoggy *****************
+*********************************************
+ 
+Please input an integer: """))
+
+secondNumber = float(input("Please input a higher integer: "))
+
 ## This saves the result from the functions on a var
 firstNumber = int(roundNumber())
 secondNumber = int(roundNumber2())
@@ -33,11 +33,32 @@ secondNumber = int(roundNumber2())
 generatedNumber = random.randrange(firstNumber, secondNumber)
 
 ## Prints the result 
-time.sleep(2) #The time.sleep command indicates the time between 
+#The time.sleep command indicates the time between
+time.sleep(1.5)
 print("The generated number has been selected!!!")
 time.sleep(1)
-print(" ____________________________________________")
-print("Your new number is:", generatedNumber)
+print("____________________________________________")
+print("Your new number is: ", generatedNumber)
+
+#The following  repeats the program once more
+##
+repeat = input("Would you like to generate another number? (Y/N): ")
+while repeat == "Y":
+    firstNumber = (input("Please input a number: "))
+    secondNumber = (input("Please input a higher number: "))
+    print(firstNumber,secondNumber)
+    generatedNumber = random.randrange(firstNumber, secondNumber)
+    time.sleep(1.5)
+    print("The generated number has been selected!!!")
+    time.sleep(1)
+    print("____________________________________________")
+    print("Your new number is: ", generatedNumber)
+    repeat = (input("Would you like to generate another number? (Y/N): "))
+else:
+    print("Press any key to exit")
+    
 
 
-#Made Fully By Smoggy --- That-One-Guy-Smoggy
+## Made Fully By Smoggy
+## GitHub --- @That-One-Guy-Smoggy
+## Twitter --- @Smoggy445
